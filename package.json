@@ -10,6 +10,9 @@
     "start:shadow-case": "npm start --prefix shadow-case",
     "start:skillhub": "npm start --prefix skillhub",
     "start:roommate-finder": "npm run dev --prefix roommate-finder",
+    "app": "npm run dev --prefix app",
+    "app:build": "npm run build --prefix app",
+    "app:preview": "npm run preview --prefix app",
     "dev": "concurrently --kill-others-on-fail --names \"HUB,DISCUSS,NOVA,SHADOW,SKILL,ROOMMATE\" --prefix-colors \"cyan,magenta,green,red,yellow,blue\" \"npm run hub\" \"npm run start:discusshub\" \"npm run start:nova-store\" \"npm run start:shadow-case\" \"npm run start:skillhub\" \"npm run start:roommate-finder\"",
     "start": "npm run dev"
   },

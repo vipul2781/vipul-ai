@@ -1,0 +1,61 @@
+/* =====================================================
+   VIPUL.AI UNIFIED PLATFORM — Global Styles
+   ===================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Brand colors */
+  --brand-purple: #a855f7;
+  --brand-cyan:   #06b6d4;
+  --brand-green:  #22c55e;
+  --brand-orange: #f97316;
+  --brand-red:    #ef4444;
+  --brand-blue:   #3b82f6;
+
+  /* Dark background */
+  --bg-base:    #0a0a0f;
+  --bg-card:    rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.07);
+  --border:     rgba(255,255,255,0.08);
+
+  --text-primary:   #f0f0f5;
+  --text-secondary: #9ca3af;
+  --text-muted:     #6b7280;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: rgba(168,85,247,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(168,85,247,0.7); }
+
+/* Utility */
+.flex-grow { flex: 1; }
