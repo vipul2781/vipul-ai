@@ -1,0 +1,22 @@
+{
+  "name": "vipul-ai-hub",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vipul's Project Hub — launch all 5 projects from one command",
+  "scripts": {
+    "hub": "node hub/server.js",
+    "start:discusshub": "npm start --prefix discusshub",
+    "start:nova-store": "npm start --prefix nova-store",
+    "start:shadow-case": "npm start --prefix shadow-case",
+    "start:skillhub": "npm start --prefix skillhub",
+    "start:roommate-finder": "npm run dev --prefix roommate-finder",
+    "dev": "concurrently --kill-others-on-fail --names \"HUB,DISCUSS,NOVA,SHADOW,SKILL,ROOMMATE\" --prefix-colors \"cyan,magenta,green,red,yellow,blue\" \"npm run hub\" \"npm run start:discusshub\" \"npm run start:nova-store\" \"npm run start:shadow-case\" \"npm run start:skillhub\" \"npm run start:roommate-finder\"",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

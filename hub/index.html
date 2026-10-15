@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vipul's Project Hub — All 5 live React projects in one place. Launch, explore, and deploy from a single command." />
+  <title>Vipul's Project Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Top navigation bar -->
+  <nav class="topbar" id="topbar">
+    <div class="topbar-left">
+      <div class="topbar-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Vipul<span class="logo-accent">.ai</span></span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="status-indicator" id="status-indicator">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-label" id="status-label">Checking servers...</span>
+      </div>
+      <button class="btn-launch-all" id="btn-launch-all" onclick="openAll()">
+        <span class="btn-icon">⚡</span>
+        Launch All
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      5 Projects · One Hub
+    </div>
+    <h1 class="hero-title">
+      Vipul's<br />
+      <span class="gradient-text">Project Hub</span>
+    </h1>
+    <p class="hero-subtitle">
+      A premium collection of full-stack React applications.<br />
+      Select any project below to explore it live.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-icon">🚀</span>
+        <span>5 React Apps</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-icon">⚡</span>
+        <span>One Command Deploy</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-icon">🎨</span>
+        <span>Premium UI</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects grid -->
+  <main class="projects-section">
+    <div class="section-header">
+      <h2 class="section-title">Live Projects</h2>
+      <p class="section-desc">Click any card to open the project in a new tab</p>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- DiscussHub -->
+      <article class="project-card" id="card-discusshub" data-port="3001" data-color="purple" onclick="launchProject('discusshub', 3001)">
+        <div class="card-glow purple"></div>
+        <div class="card-header purple-bg">
+          <div class="card-icon-wrap">
+            <span class="card-icon">💬</span>
+          </div>
+          <div class="card-port-badge">:3001</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">DiscussHub</h3>
+          <p class="card-desc">Modern community forum & discussion platform with 12 dedicated pages, threaded comments, voting engine, and moderation tools.</p>
+          <div class="card-tags">
+            <span class="tag">React 19</span>
+            <span class="tag">Bootstrap 5</span>
+            <span class="tag">React Router</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-status" id="status-discusshub">
+              <span class="dot offline"></span>
+              <span class="status-text">Offline</span>
+            </div>
+            <button class="card-btn purple-btn" id="btn-discusshub">
+              <span>Launch</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nova Store -->
+      <article class="project-card" id="card-nova-store" data-port="3002" data-color="green" onclick="launchProject('nova-store', 3002)">
+        <div class="card-glow green"></div>
+        <div class="card-header green-bg">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🛍️</span>
+          </div>
+          <div class="card-port-badge">:3002</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Nova Store</h3>
+          <p class="card-desc">Full-featured e-commerce platform with cart, wishlist, checkout, product catalog, categories, and order management.</p>
+          <div class="card-tags">
+            <span class="tag">React 19</span>
+            <span class="tag">Context API</span>
+            <span class="tag">Bootstrap 5</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-status" id="status-nova-store">
+              <span class="dot offline"></span>
+              <span class="status-text">Offline</span>
+            </div>
+            <button class="card-btn green-btn" id="btn-nova-store">
+              <span>Launch</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ShadowCase -->
+      <article class="project-card" id="card-shadow-case" data-port="3003" data-color="red" onclick="launchProject('shadow-case', 3003)">
+        <div class="card-glow red"></div>
+        <div class="card-header red-bg">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🕵️</span>
+          </div>
+          <div class="card-port-badge">:3003</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">ShadowCase</h3>
+          <p class="card-desc">Interactive mystery investigation game with case solving, multiplayer, leaderboard, achievements, and player profiles.</p>
+          <div class="card-tags">
+            <span class="tag">React 19</span>
+            <span class="tag">Game Engine</span>
+            <span class="tag">LocalStorage</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-status" id="status-shadow-case">
+              <span class="dot offline"></span>
+              <span class="status-text">Offline</span>
+            </div>
+            <button class="card-btn red-btn" id="btn-shadow-case">
+              <span>Launch</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SkillHub -->
+      <article class="project-card" id="card-skillhub" data-port="3004" data-color="orange" onclick="launchProject('skillhub', 3004)">
+        <div class="card-glow orange"></div>
+        <div class="card-header orange-bg">
+          <div class="card-icon-wrap">
+            <span class="card-icon">⚡</span>
+          </div>
+          <div class="card-port-badge">:3004</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">SkillHub</h3>
+          <p class="card-desc">Freelance marketplace platform with freelancer profiles, project postings, service listings, messaging, and dashboards.</p>
+          <div class="card-tags">
+            <span class="tag">React 19</span>
+            <span class="tag">React-Toastify</span>
+            <span class="tag">Bootstrap 5</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-status" id="status-skillhub">
+              <span class="dot offline"></span>
+              <span class="status-text">Offline</span>
+            </div>
+            <button class="card-btn orange-btn" id="btn-skillhub">
+              <span>Launch</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Roommate Finder -->
+      <article class="project-card wide" id="card-roommate-finder" data-port="3005" data-color="blue" onclick="launchProject('roommate-finder', 3005)">
+        <div class="card-glow blue"></div>
+        <div class="card-header blue-bg">
+          <div class="card-icon-wrap">
+            <span class="card-icon">🏠</span>
+          </div>
+          <div class="card-port-badge">:3005</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Roommate Finder</h3>
+          <p class="card-desc">Startup-grade room & housemate finder with multi-faceted filters, AI compatibility scores, photo galleries, interactive maps, and a full-featured post-a-room form.</p>
+          <div class="card-tags">
+            <span class="tag">React 18</span>
+            <span class="tag">Vite 5</span>
+            <span class="tag">React Router 6</span>
+            <span class="tag">Bootstrap 5</span>
+          </div>
+          <div class="card-footer">
+            <div class="card-status" id="status-roommate-finder">
+              <span class="dot offline"></span>
+              <span class="status-text">Offline</span>
+            </div>
+            <button class="card-btn blue-btn" id="btn-roommate-finder">
+              <span>Launch</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Command reference section -->
+  <section class="commands-section">
+    <div class="commands-inner">
+      <h2 class="commands-title">
+        <span class="commands-icon">⌨️</span>
+        Quick Start
+      </h2>
+      <div class="commands-grid">
+        <div class="command-card">
+          <div class="command-label">Launch All 5 Projects</div>
+          <div class="command-code">
+            <code id="cmd-all">npm run dev</code>
+            <button class="copy-btn" onclick="copyCmd('cmd-all', this)" title="Copy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="command-card">
+          <div class="command-label">Launch Hub Only</div>
+          <div class="command-code">
+            <code id="cmd-hub">npm run hub</code>
+            <button class="copy-btn" onclick="copyCmd('cmd-hub', this)" title="Copy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="command-card">
+          <div class="command-label">Install All Dependencies</div>
+          <div class="command-code">
+            <code id="cmd-install">npm install && npm install --prefix discusshub && npm install --prefix nova-store && npm install --prefix shadow-case && npm install --prefix skillhub && npm install --prefix roommate-finder</code>
+            <button class="copy-btn" onclick="copyCmd('cmd-install', this)" title="Copy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="hub-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">⬡</span>
+        <span>Vipul<span class="logo-accent">.ai</span></span>
+      </div>
+      <p class="footer-copy">Built with React · Powered by passion · Hub v1.0</p>
+      <div class="footer-ports">
+        <span class="port-pill">Hub :3000</span>
+        <span class="port-pill">DiscussHub :3001</span>
+        <span class="port-pill">Nova :3002</span>
+        <span class="port-pill">Shadow :3003</span>
+        <span class="port-pill">Skill :3004</span>
+        <span class="port-pill">Roommate :3005</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
